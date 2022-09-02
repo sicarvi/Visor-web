@@ -18,6 +18,6 @@ from django.urls import path, include
 from consulta import views as consultaViews
 
 urlpatterns = [
-    path('consulta/', consultaViews.landing1, name="landing1"),
+    path('consulta/', consultaViews.landing1, name="index"),
     path('admin/', admin.site.urls),
 ]
