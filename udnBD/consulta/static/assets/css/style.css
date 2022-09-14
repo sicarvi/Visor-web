@@ -1,30 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+*{
+  font-family: 'Dosis', sans-serif;
+}
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
-    background-color: #ccc;
-  }
-  
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  }
-  .container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+  background-color: #57cc9960;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #57cc9990;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.open{
+  text-align: center;
+}
+#tituloNav{
+  position: relative;
+  margin: 1.5em auto;
+}
+
+.titulo{
+  text-align: center;
+}
+.contenido{
+  width: 100%;
+  height: 3em;
+}
+.contenido form{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.containerTipo{
+  text-align: center;
+}
+.containerTipo p{
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.containerTabla{
+  text-align: center;
+}
+.containerUsuario{
+  text-align: center;
+}
+.containerTabla label{
+  display: block;
+  text-align: center;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.containerTabla select{
+  margin: 0px auto;
+}
+.containerUsuario select{
+  margin: 0px auto;
+}
+.containerUsuario label{
+  display: block;
+  text-align: center;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.nav{
+  margin-bottom: 2em;
+}
+#btnBuscar {
+  min-width: 110px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #57cc99;
+  background: #57cc99;
+  margin-top: .5em;
+}
+#btnBuscar:hover {
+  background: #fff;
+  color: #57cc99
+}
+#tituloNav{
+  color: #57cc99;
+  text-shadow: 2px 2px 4px #57cc9950;
+}

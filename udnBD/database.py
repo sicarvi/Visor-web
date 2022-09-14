@@ -7,11 +7,14 @@ import os
 
 class Database:
 
-    def __init__(self, table: string) -> "Database":
+    def __init__(self) -> "Database":
         load_dotenv()
         self.client = pymongo.MongoClient(f"mongodb+srv://{os.getenv('dbuser')}:{os.getenv('password')}@udeninos.lyt70.mongodb.net/?retryWrites=true&w=majority")
         self.dbname = self.client["BD_UDENINOS"]
-        self.collection = self.dbname[table] 
+    
+    def set_table(self, table):
+        self.collection = self.dbname[table]
+        print(self.collection)
     
     def see_all(self):
         return self.collection.find({})

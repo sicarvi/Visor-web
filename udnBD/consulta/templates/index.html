@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   {% load static %}
   {% load template_filters %}
-  <meta charset="utf-8">
-  <title>Consulta</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+  <title>Base de datos Universidad de los niños</title>
 </head>
-{%if contenido%}
+<body>
+  <section class="nav">
+    <div class="titulo"> 
+      <h1 id="tituloNav">Base de datos Universidad de los niños</h1>
+    </div>
+    <div class="contenido">
+      <form method="post">
+        {%csrf_token%}
+        <div class="containerTabla">
+          <label for="tabla">Selecione una tabla</label>
+          <select name="tabla" id="tabla" required>
+            <option value="BD_Talleristas_Mentores">BD_Talleristas_Mentores</option>
+            <option value="BD_historica">BD_historica</option>
+            <option value="BD_investigadores">BD_investigadores</option>
+            <option value="BD_profesores">BD_profesores</option>
+          </select>
+        </div>
+        <div class="containerUsuario">
+          <label for="usuario">Selecione un filtro</label>
+          <select name="usuario" id="usuario">
+            <option value="aU">a</option>
+            <option value="bU">b</option>
+            <option value="cU">c</option>
+          </select>
+        </div>
+        <div class="containerTipo">
+          <p>Filtro</p>
+          <input type="text" name="tipo" id="tipoSeleccion">
+        </div>
+        <div class="containerBtn">
+          <button type="submit" id="btnBuscar">Buscar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  {%if contenido%}
   {%for dic in contenido%}
-  <button type="button" class="collapsible">{{ dic|get_item:"Nombres y apellidos" }}</button>
+  <button type="button" class="collapsible">{{ dic|get_item:"NOMBRE COMPLETO" }}</button>
   <div class="content">
     {%for key,value in dic.items%}
-      <div class="container">
-      <div class="open"><p>{{key}}</p></div>
+    <div class="container">
+      <div class="open"><p> <b>{{key}}</b></p></div>
       <div class="open"><p>{{value}}</p></div>
-      </div>
+    </div>
     {%endfor%}
   </div>
-  {%endfor%}
+{%endfor%}
 {%endif%}
-<script src="{% static 'assets/js/script.js' %}"></script>
+  <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>
